@@ -1,9 +1,6 @@
 from django.urls import path
-from .views import save_item, get_item, Contacts
-
+from . import views
+ 
 urlpatterns = [
-    path('save_item/', save_item),
-    path('get_item/<str:key>/', get_item),
-    path('contact/', Contacts)
+    path('add_contact/', views.add_contact, name='add_contact'),
 ]
-
