@@ -8,3 +8,15 @@ class Contact(models.Model):
  
     def __str__(self):
         return self.name
+    
+from django.db import models
+
+class Task(models.Model):
+    title = models.CharField(max_length=100)
+    description = models.TextField()  
+    dueDate = models.DateField()      
+    priorit = models.CharField(max_length=20)
+    category = models.CharField(max_length=20)
+    subtask = models.JSONField()     
+    def __str__(self):
+        return self.title
